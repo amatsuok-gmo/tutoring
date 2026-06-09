@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
 <title>Aaron Matsuoka — French Tutoring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +14,8 @@
 
 <nav>
   <a href="#" class="nav-wordmark">Aaron <span>Matsuoka</span></a>
-  <ul>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+  <ul id="main-nav">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -29,7 +31,7 @@
     <a href="#services" class="btn-ghost">Learn more</a>
   </div>
   <div class="hero-visual">
-    <img src="manuel-sainsily-M4WhXyoixR0-unsplash.jpg" alt="French tutoring session" class="hero-image">
+    <img src="manuel-sainsily-M4WhXyoixR0-unsplash.jpg" alt="French tutoring session" class="hero-image" loading="lazy">
     <p class="hero-image-caption">Ariel image of Guadeloupe</p>
   </div>
 </div>
@@ -39,19 +41,19 @@
 <section id="about">
   <p class="section-label">About</p>
   <div class="about-row">
+    <h2 class="section-heading about-heading">Tutoring built on<br>the assertion that French<br>is a global language.</h2>
+    <div class="about-visual">
+      <img src="aaron_headshot.jpg" alt="Aaron Matsuoka" class="about-image" loading="lazy">
+    </div>
     <div class="about-copy">
-      <h2 class="section-heading">Tutoring built on<br>the assertion that French<br>is a global language.</h2>
       <p class="section-body">I'm Aaron Matsuoka — a recent graduate with a B.A in Organizational Studies with Honors and a B.A. in French & Francophone Studies from Pitzer and Scripps Colleges and a JBHS alumni. 
         After growing up in Redding, I've lived and worked in Strasbourg, France and Geneva, Switzerland. My approach recognizes that French is a global language, spoken beyond the borders of Continental Europe. I treat language as culture: we read, discuss, and think in French from day one. I hope to expose my students to the whole Francophone world: including but not limited to, Francophone Africa, Canada, Polynesia, Historical Indochina, and the Caribbean. I aim to help my student develop a real working proficiency of the language, not just skills that are only relevant the classroom.</p>
-    </div>
-    <div class="about-visual">
-      <img src="aaron_headshot.jpg" alt="Aaron Matsuoka" class="about-image">
     </div>
   </div>
   <div class="about-grid">
     <div class="about-stat">
       <div class="about-stat-num">2+</div>
-      <div class="about-stat-label">Years teaching and tutoring at the university level</div>
+      <div class="about-stat-label">Years teaching, researching, and tutoring at the university level</div>
     </div>
     <div class="about-stat">
       <div class="about-stat-num">1</div>
@@ -111,5 +113,6 @@
   <span>Aaron Matsuoka · French tutoring</span>
 </footer>
 
+<script src="main.js" defer></script>
 </body>
 </html>

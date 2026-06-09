@@ -38,6 +38,16 @@
     text-decoration: none;
     letter-spacing: 0.01em;
   }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ink);
+    padding: 0.35rem 0.5rem;
+  }
   .nav-wordmark span { color: var(--rouge); }
   nav ul {
     list-style: none;
@@ -49,6 +59,7 @@
     color: var(--muted-fg);
     text-decoration: none;
     transition: color 0.15s;
+    touch-action: manipulation;
   }
   nav ul a:hover { color: var(--rouge); }
 
@@ -86,15 +97,20 @@
   .about-row {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "heading visual" "copy visual";
     gap: 3rem;
     align-items: center;
     margin-top: 2.5rem;
   }
+  .about-heading { grid-area: heading; margin: 0; }
   .about-copy {
     max-width: 620px;
+    grid-area: copy;
   }
   .about-visual {
     width: 100%;
+    grid-area: visual;
   }
   .about-image {
     width: 100%;
@@ -142,6 +158,7 @@
     text-decoration: none;
     letter-spacing: 0.02em;
     transition: opacity 0.15s;
+    touch-action: manipulation;
   }
   .btn-primary:hover { opacity: 0.88; }
   .btn-ghost {
@@ -156,6 +173,7 @@
     text-decoration: none;
     margin-left: 1rem;
     transition: border-color 0.15s, color 0.15s;
+    touch-action: manipulation;
   }
   .btn-ghost:hover { border-color: var(--ink); }
 
@@ -292,9 +310,24 @@
   }
 
   @media (max-width: 600px) {
-    nav { padding: 1rem 1.25rem; }
-    nav ul { gap: 1.25rem; }
-    .hero, section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    nav { padding: 0.75rem 1rem; align-items: center; }
+    .nav-toggle { display: block; }
+    nav ul { display: none; width: 100%; }
+    nav ul.open { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+    nav ul li { list-style: none; }
+    nav ul a { display: block; padding: 0.5rem 0; }
+    .hero, section { padding-left: 1rem; padding-right: 1rem; }
+    .hero { padding: 3rem 1rem 2rem; grid-template-columns: 1fr; }
+    .hero-copy { max-width: 100%; }
     .about-grid, .services-grid { grid-template-columns: 1fr; }
+    .about-row {
+      grid-template-columns: 1fr;
+      grid-template-areas: "heading" "visual" "copy";
+      gap: 1.25rem;
+      padding-top: 0.5rem;
+    }
+    .about-visual { justify-self: center; }
+    .btn-primary, .btn-ghost { display: block; width: 100%; margin-left: 0; }
+    .btn-ghost { margin-top: 0.75rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
